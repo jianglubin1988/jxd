@@ -30,4 +30,10 @@ public class MemberController extends BaseController {
         return super.success("");
     }
 
+    @RequestMapping("/list")
+    @ResponseBody
+    public Map<String, Object> list() {
+        return super.success(service.getAll());
+    }
+
 }

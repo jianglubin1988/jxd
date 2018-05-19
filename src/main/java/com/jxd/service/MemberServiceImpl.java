@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("MemberService")
 public class MemberServiceImpl implements MemberService {
@@ -22,5 +23,10 @@ public class MemberServiceImpl implements MemberService {
         member.setCrtdate(DateUtils.getCurrentTime());
         member.setCardno(CommonUtils.getCardno());
         mapper.insert(member);
+    }
+
+    @Override
+    public List<Member> getAll() {
+        return mapper.getAll();
     }
 }

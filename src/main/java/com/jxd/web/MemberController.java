@@ -17,7 +17,7 @@ public class MemberController extends BaseController {
     @Autowired
     private MemberService service;
 
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String index(ModelMap map) {
         map.addAttribute("host", "host");
         return "member/index";
